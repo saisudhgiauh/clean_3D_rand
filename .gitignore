@@ -1,0 +1,11 @@
+# Ignore historical data directory 
+
+historical/
+
+# Ignore all files and directories starting with "data"
+
+data*
+
+#Ignore all files and directories starting with "figures"
+
+figures*
