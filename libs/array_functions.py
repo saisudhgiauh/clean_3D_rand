@@ -54,7 +54,15 @@ def parabolic_max(xs,ys):
         a = sol[0]
         b = sol[1]
         c = sol[2]
-        return(-b/(2*a),c - b**2/(4*a))
+        # Add a check here
+        if np.isclose(a, 0):
+            # If 'a' is zero, the points are on a line. 
+            # Return the middle point as a fallback.
+            return (xs[1], ys[1]) 
+        else:
+            # Otherwise, calculate the vertex normally
+            return(-b/(2*a),c - b**2/(4*a))
+        
     else:
         return((1/3)*(xs[0]+xs[1]+xs[2]),(1/3)*(ys[0]+ys[1]+ys[2]))
 
