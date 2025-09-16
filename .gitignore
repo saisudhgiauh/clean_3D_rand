@@ -1,24 +1,32 @@
-# Ignore historical data directory 
+# Byte-compiled / optimized / C extensions
+__pycache__/
+*.pyc
 
-historical/
+# Virtual Environments
+venv/
+env/
+.venv/
+mp/
 
-# Ignore all files and directories starting with "data"
-
+# Data and Figure files/folders
 data*
-
-#Ignore all files and directories starting with "figures"
-
 figures*
+*.pdf
+*.png
+*.zip
+*.vtk
 
-#Ignore changes to config.py unless otherwise stated 
+# Log files
+*.log
 
+# Local configuration files
 config.py
 
-#Ignore visualiser
+# IDE and Editor Folders
+.vscode/
+.idea/
+.ipynb_checkpoints/
 
-visualiser/ 
-
-#Ignore angle files
-
-rands.npy
-
+# OS-specific files
+.DS_Store
+*~
