@@ -196,4 +196,45 @@ if export_graphs:
 
 # Finally, show the interactive window with all six plots
 plt.show()
+
+
+# --- Add this new section to your script ---
+
+# 1. DEFINE YOUR TARGET ANGLES HERE
+target_alpha = -18  # degrees
+target_beta = 14 # degrees
+
+print(f"\nGenerating and saving spectrum plot for angles closest to (α={target_alpha}, β={target_beta})...")
+
+# 2. FIND THE NEAREST INDICES
+alpha_index = np.argmin(np.abs(np.array(alphas) - target_alpha))
+beta_index = np.argmin(np.abs(np.array(betas) - target_beta))
+
+# Get the actual angle values at these indices to use in the plot title and filename
+actual_alpha = alphas[alpha_index]
+actual_beta = betas[beta_index]
+
+# 3. EXTRACT THE SPECTRUM (DATA SLICE)
+reflection_spectrum = avg_refl_coeffs[alpha_index, beta_index, :]
+
+# 4. CREATE THE 2D PLOT
+# It's good practice to create a new figure and axis object
+fig_spec, ax_spec = plt.subplots(figsize=(8, 6))
+ax_spec.plot(avg_wvls, reflection_spectrum, marker='o', linestyle='-', markersize=4)
+
+# Add labels and a title for clarity
+ax_spec.set_title(f'Reflection Spectrum at (α ≈ {actual_alpha:.2f}°, β ≈ {actual_beta:.2f}°)')
+ax_spec.set_xlabel('Wavelength (μm)')
+ax_spec.set_ylabel('Averaged Reflected Power (a.u.)')
+ax_spec.grid(True)
+fig_spec.tight_layout()
+
+# 5. SAVE THE PLOT AS A SEPARATE FILE (This is the new part)
+if export_graphs:
+    # Create a descriptive filename
+    filename = f"spectrum_plot_alpha_{actual_alpha:.2f}_beta_{actual_beta:.2f}.pdf"
+    fig_spec.savefig(f"{fig_output_directory}/{filename}", dpi=500)
+    print(f"Spectrum plot saved as {filename}")
+
+# The final plt.show() from your script will now display this figure along with the combined 3x2 plot.
 # %%

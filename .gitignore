@@ -13,3 +13,7 @@ figures*
 #Ignore changes to config.py unless otherwise stated 
 
 config.py
+
+#Ignore visualiser
+
+visualiser/

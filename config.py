@@ -24,7 +24,7 @@ round_top = True                    #whether or not the top of the tree (and ove
 point_spacing = 2                   #the distance along the ridge between overlapping layers
 overlap = 0.5                       #the distance along the ridge that the overlap takes up
 overlap_angle = 2                   #the angle of the overlapping part relative to the main ridge. For no overlap, set to something small but nonzero.
-n_ridges = 4                        #the number of ridges that should be drawn in a single unitcell. Should always be 1 if randomise_ridge_angles is False.
+n_ridges = 6                        #the number of ridges that should be drawn in a single unitcell. Should always be 1 if randomise_ridge_angles is False.
 randomise_ridge_angles = True      #whether or not the relative angles of the ridges should be randomised.
 max_ridge_angle = 30                #the maximum angle from the normal that a ridge may be oriented at. If no randomisation, all ridges will be drawn at this angle.
 
@@ -41,7 +41,7 @@ resolution = 50                     #pixels per micron
 n2f_height = 1e3                    #far field distance in the y direction (angular data calculated on this line(2D)/plane(3D))
 n_periods = 6                      #number of periods simulated for the far field calculation (this is rather cpu intensive in 3D)
 max_angle = 20                      #maximum angle away from the normal for the simulation to calculate the farfields.
-n_angles = 61                       #number of angles in each direction to sample, set to an odd value so there is a true normal measurement
+n_angles = 41                       #number of angles in each direction to sample, set to an odd value so there is a true normal measurement
 polarisation_setting = "mixed"      #set to "P" or "S" or "mixed". P polarisation has an electric field in the x direction, S polarisation has an electric field in the z direction
 eps_averaging = False               #whether or not the dielectric should be eps averaged. sometimes takes a long time and I'm not sure why. Doesn't really affect the spectrum.
 incident_variation = "beta"         #set to "alpha" or "beta". If multiple bloch angles are being used, this controls the direction in which the incident angle is varied between sims.
