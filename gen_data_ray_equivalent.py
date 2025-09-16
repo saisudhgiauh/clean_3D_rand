@@ -47,6 +47,9 @@ def _build_geometry():
         position = (2 * i + 1 - n_ridges) / (2 * n_ridges) * cell_x
         actual_geometry += gg.get_ridge(position, etas[i])
      return actual_geometry
+    
+     #Add this line to print the angles
+     print(f"Using ridge angles (etas): {etas}")
 
 
 
