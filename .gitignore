@@ -16,4 +16,9 @@ config.py
 
 #Ignore visualiser
 
-visualiser/
+visualiser/ 
+
+#Ignore angle files
+
+rands.npy
+
